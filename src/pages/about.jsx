@@ -9,7 +9,7 @@ import {
   GitHubIcon,
   LinkedInIcon,
 } from '@/components/SocialIcons'
-import portraitImage from '@/images/avatar.jpg'
+import portraitImage from '@/images/img.png'
 import { config } from "../../config";
 
 function SocialLink({ className, href, children, icon: Icon }) {
@@ -41,11 +41,7 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About - Spencer Sharp</title>
-        <meta
-          name="description"
-          content="I’m Spencer Sharp. I live in New York City, where I design the future."
-        />
+        <title>About</title>
       </Head>
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
@@ -54,6 +50,7 @@ export default function About() {
               <Image
                 src={portraitImage}
                 alt=""
+                height={200}
                 sizes="(min-width: 1024px) 32rem, 20rem"
                 className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
               />
@@ -71,21 +68,21 @@ export default function About() {
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              <SocialLink href={config.twitterUser} icon={TwitterIcon}>
-                Follow on Twitter
-              </SocialLink>
               <SocialLink href={config.githubUser} icon={GitHubIcon} className="mt-4">
                 Follow on GitHub
               </SocialLink>
               <SocialLink href={config.linkedinUser} icon={LinkedInIcon} className="mt-4">
                 Follow on LinkedIn
               </SocialLink>
+              <SocialLink href={config.twitterUser} icon={TwitterIcon}>
+                Follow on Twitter
+              </SocialLink>
               <SocialLink
-                href="mailto:hello@techmids.io"
+                href="mailto:rachelmorris262@outlook.com"
                 icon={MailIcon}
                 className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
               >
-                hello@techmids.io
+                rachelmorris262@outlook.com
               </SocialLink>
             </ul>
           </div>
