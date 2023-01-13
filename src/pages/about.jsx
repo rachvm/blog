@@ -62,7 +62,7 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-              I’m transitioning into software engineering because I have been interested ever since I was introduced to Basic on the Spectrum. More recently, I rediscovered my passion for coding when I worked in secondary schools covering lessons including ICT, and enjoyed debugging students codes. Over the last year, I have been developing my Python skills using books, undertaken a Python course with Code First Girls, and working through the Python Developer track on DataCamp. Through my experince as a School of Code bootcamper I have developed my knowledge in Javascript, and other languages and technologies, as well as, a ever deeping enjoyment and fascination for coding.<br/> <br/>
+              I’m transitioning into software engineering because I have been interested ever since I was introduced to Basic on the Spectrum, as a child. More recently, I rediscovered my passion for coding when I worked in secondary schools covering lessons including ICT, and enjoyed debugging students codes. I started by developing my Python skills using books, undertaken a Python course with Code First Girls, and working through the Python Developer track on DataCamp. Through my experince as a School of Code bootcamper I have developed my knowledge in Javascript, and other languages and technologies, as well as, a ever deeping enjoyment and fascination for coding.<br/> <br/>
 
               When I'm not at the keyboard, I enjoy the great outdoors, particularly, white water kayaking, sea kayaking and hiking.
               </p>
