@@ -1,6 +1,6 @@
 export const config = {
-	twitterUser: "https://twitter.com/techmids",
-	linkedinUser: "https://www.linkedin.com/company/techmids/",
-	githubUser: "https://github.com/techmids",
+	twitterUser: "https://twitter.com/coderRach",
+	linkedinUser: "https://www.linkedin.com/in/rachel-morris-a3b125251/",
+	githubUser: "https://github.com/rachvm",
 
 }
