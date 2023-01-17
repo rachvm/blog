@@ -2,7 +2,11 @@ import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
-
+import image1 from '@/images/photos/image-1.jpg'
+import image2 from '@/images/photos/image-2.jpg'
+import image3 from '@/images/photos/image-3.jpg'
+import image4 from '@/images/photos/image-4.jpg'
+import image5 from '@/images/photos/image-5.jpg'
 import { Container } from '@/components/Container'
 import {
   TwitterIcon,
@@ -37,6 +41,33 @@ function MailIcon(props) {
   )
 }
 
+function Photos() {
+  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
+
+  return (
+    <div className="mt-10 sm:mt-15">
+      <div className="-my-4 flex justify-center gap-5 overflow-hidden py-1 sm:gap-8">
+        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
+          <div
+            key={image.src}
+            className={clsx(
+              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-60 sm:rounded-2xl',
+              rotations[imageIndex % rotations.length]
+            )}
+          >
+            <Image
+              src={image}
+              alt=""
+              sizes="(min-width: 640px) 18rem, 11rem"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export default function About() {
   return (
     <>
@@ -62,10 +93,13 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-              I’m transitioning into software engineering because I have been interested ever since I was introduced to Basic on the Spectrum, 
-              as a child. More recently, I rediscovered my passion for coding when I worked in secondary schools covering lessons including ICT, 
-              and enjoyed debugging students codes. I started by developing my Python skills using books, undertaken a Python course with Code 
-              First Girls, and working through the Python Developer track on DataCamp. Through my experince as a School of Code bootcamper I have 
+              I have had an interest in coding ever since I was introduced to Basic on the Spectrum, 
+              as a child. I rediscovered my passion for coding while working in secondary schools covering lessons including ICT, 
+              and enjoyed debugging students codes. From this I started by playing with coding kits such as Arduino, then went on to develop my Python skills using books, 
+              undertaken a Python course with Code 
+              First Girls, and working through the Python Developer track on DataCamp.<br/> <br/> 
+              
+              The main developement of my coding skills has been while undertaking the intensive 16 week bootcamp through School of Code. As a bootcamper I have been introduced and  
               developed my knowledge in Javascript, and other languages and technologies, as well as, a ever deeping enjoyment and fascination for 
               coding.<br/> <br/>
 
@@ -95,6 +129,7 @@ export default function About() {
           </div>
         </div>
       </Container>
+      <Photos />
     </>
   )
 }
