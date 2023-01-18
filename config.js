@@ -3,4 +3,4 @@ export const config = {
 	linkedinUser: "https://www.linkedin.com/in/rachel-morris-a3b125251/",
 	githubUser: "https://github.com/rachvm",
 
-}
+} 

@@ -7,7 +7,7 @@
     "build": "next build",
     "export": "next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint" 
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {

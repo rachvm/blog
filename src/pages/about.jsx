@@ -2,11 +2,11 @@ import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
+import image1 from '@/images/photosAbout/image-1.jpg'
+import image2 from '@/images/photosAbout/image-2.jpg'
+import image3 from '@/images/photosAbout/image-3.jpg'
+import image4 from '@/images/photosAbout/image-4.jpg'
+import image5 from '@/images/photosAbout/image-5.jpg'
 import { Container } from '@/components/Container'
 import {
   TwitterIcon,
@@ -93,17 +93,16 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-              I have had an interest in coding ever since I was introduced to Basic on the Spectrum, 
-              as a child. I rediscovered my passion for coding while working in secondary schools covering lessons including ICT, 
-              and enjoyed debugging students codes. From this I started by playing with coding kits such as Arduino, then went on to develop my Python skills using books, 
-              undertaken a Python course with Code 
-              First Girls, and working through the Python Developer track on DataCamp.<br/> <br/> 
+              My journey into coding began as a young child when I was introduced to Basic on the Spectrum, I remember being fascinated by the challenges 
+              of instructing the computer. I rediscovered my passion for coding while working in secondary schools covering lessons, which included ICT, 
+              where I enjoyed debugging students codes. From this I started by playing with coding kits such as Arduino, then went on to develop my Python 
+              skills using books, undertaking a Python course with Code First Girls, then working through the Python Developer track on DataCamp. <br/><br/>
               
-              The main developement of my coding skills has been while undertaking the intensive 16 week bootcamp through School of Code. As a bootcamper I have been introduced and  
-              developed my knowledge in Javascript, and other languages and technologies, as well as, a ever deeping enjoyment and fascination for 
-              coding.<br/> <br/>
+              The main developement of my coding skills, was during the intensive 16 week bootcamp through School of Code. As a bootcamper I have been introduced and 
+              developed my knowledge in Javascript, as well as, other languages, libraries and frameworks, along with an ever deepening enjoyment and fascination for 
+              coding. <br/><br/>
 
-              When I'm not at the keyboard, I enjoy the great outdoors, particularly, white water kayaking, sea kayaking and hiking.
+              When I'm not at the keyboard, I enjoy the great outdoors, particularly, white water kayaking, sea kayaking and hiking.  <br/><br/>
               </p>
             </div>
           </div>

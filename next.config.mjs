@@ -19,7 +19,7 @@ const nextConfig = {
   },
   basePath: "/blog",
 }
-
+ 
 
 const withMDX = nextMDX({
   extension: /\.mdx?$/,

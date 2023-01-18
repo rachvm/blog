@@ -3,4 +3,4 @@ export const navLinks = [
 	{name: "About", link: "/about"},
 	
 	
-]
+] 

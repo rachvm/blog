@@ -22,7 +22,7 @@ You **cannot**:
 - Use the Components and Templates to produce anything that may be deemed by Tailwind Labs Inc, in their sole and absolute discretion, to be competitive or in conflict with the business of Tailwind Labs Inc.
 
 ### Example usage
-
+ 
 Examples of usage **allowed** by the license:
 
 - Creating a personal website by yourself.
