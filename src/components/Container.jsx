@@ -25,7 +25,7 @@ const InnerContainer = forwardRef(function InnerContainer(
       <div className="mx-auto max-w-2xl lg:max-w-5xl">{children}</div>
     </div>
   )
-})
+}) 
 
 export const Container = forwardRef(function Container(
   { children, ...props },

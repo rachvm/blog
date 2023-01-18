@@ -22,7 +22,7 @@ export function Card({ as: Component = 'div', className, children }) {
       {children}
     </Component>
   )
-}
+} 
 
 Card.Link = function CardLink({ children, ...props }) {
   return (

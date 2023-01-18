@@ -389,4 +389,4 @@ export function Header() {
       {isHomePage && <div style={{ height: 'var(--content-offset)' }} />}
     </>
   )
-}
+} 

@@ -5,4 +5,4 @@ export function formatDate(dateString) {
     year: 'numeric',
     timeZone: 'UTC',
   })
-}
+} 

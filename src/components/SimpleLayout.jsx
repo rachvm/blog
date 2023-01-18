@@ -15,3 +15,4 @@ export function SimpleLayout({ title, intro, children }) {
     </Container>
   )
 }
+ 

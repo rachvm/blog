@@ -19,4 +19,4 @@ export function Section({ title, children }) {
       </div>
     </section>
   )
-}
+} 

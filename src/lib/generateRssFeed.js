@@ -50,4 +50,4 @@ export async function generateRssFeed() {
     writeFile('./public/rss/feed.xml', feed.rss2(), 'utf8'),
     writeFile('./public/rss/feed.json', feed.json1(), 'utf8'),
   ])
-}
+} 
