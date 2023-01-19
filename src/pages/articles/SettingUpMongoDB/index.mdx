@@ -1,0 +1,64 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+import document from './InsertToCollectionChat.jpg'
+
+
+export const meta = {
+  author: 'Rachel Morris',
+  date: '2023-01-19',
+  title: 'Initialising Collection in MongoDB',
+  description:
+    'After some initial research into MongoDB, this post will look at setting up a Database in MongoDB',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## Setting The Scene
+
+Now that I have an understanding of MongoDB queries, the next step is to create a backend which eventually could be sent to a frontend
+using cors. I have decided to work this out by myself from my understanding from using PostgreSQL because I learn better from 
+working it out rather than following tutorials.
+
+## Getting Coding...
+
+During the last post, the Cluster was created, so to continue with the free account I created a new database within the cluster. 
+
+Next was to design the setup and inserted a documment. This can either be done with empty data, or in this case I 
+decided to start inserting information for the first post for my chat app. 
+
+<Image src={document} alt="Document Inserted with value types"/> 
+
+This was a straightforward process as it requires the user to click on where to add text, and a drop down box appears when you hover 
+over the field type. Then I added three more documents, which was a simple process of cloning the document and changing the input. 
+MongoDB supports the user when adding information on their website, and as soon as data is inputted in correctly it appears red.
+
+Next the backend was set up with express and relevant folders, and as mentioned in the previous post I undertook a database check to
+ensure I was correctly linked to MongoDB. This meant I was now able to set up my models and routes folder, and to begin with I was 
+going to fetch all the data I had added in MongoDB.
+
+Using the query information from this tutorial https://www.mongodb.com/developer/languages/javascript/node-crud-tutorial/ and my understanding
+of connecting databases with SQL I was able to fetch all the data from my collection using Postman. Below is the code from my models file:
+
+```c
+
+import { MongoClient } from "mongodb";
+import dotenv from "dotenv";
+dotenv.config()
+
+const uri = process.env.ATLAS;
+const client = new MongoClient(uri);
+const database = client.db('gettogether');
+const collection = database.collection('chat');
+
+export async function getAllPosts() {
+    const message = collection.find()
+    const results = await message.toArray();
+    return results
+}
+
+```
+
+## Next Steps
+
+Now that I have my backend interacting with MongoDB, I will need to set up the front end using ReactJS, so that 
+this can be displayed in the app.

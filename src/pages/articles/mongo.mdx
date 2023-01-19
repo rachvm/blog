@@ -41,11 +41,13 @@ What I found particularly useful is that you can check the link to MongoDB by ca
 to determine if I have linked to the database. 
 
 ```c
-import { MongoClient } from "mongodb"
+import { MongoClient } from "mongodb";
+import dotenv from "dotenv";
+dotenv.config()
 
 async function main() {
 
-    const uri = process.env.ATLAS
+    const uri = process.env.ATLAS;
 
     const client = new MongoClient(uri);
 
