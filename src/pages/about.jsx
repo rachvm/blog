@@ -91,7 +91,7 @@ export default function About() {
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
               Rachel Morris
             </h1>
-            <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+            <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400 border-t border-zinc-100 pt-8 dark:border-zinc-700/40">
               <p>
               My journey into coding began as a young child when I was introduced to Basic on the Spectrum, I remember being fascinated by the challenges 
               of instructing the computer. I rediscovered my passion for coding while working in secondary schools covering lessons, which included ICT, 
@@ -114,21 +114,45 @@ export default function About() {
               <SocialLink href={config.linkedinUser} icon={LinkedInIcon} className="mt-4">
                 Follow on LinkedIn
               </SocialLink>
-              <SocialLink href={config.twitterUser} icon={TwitterIcon}>
+              <SocialLink href={config.twitterUser} icon={TwitterIcon} className="mt-4">
                 Follow on Twitter
               </SocialLink>
               <SocialLink
                 href="mailto:rachelmorris262@outlook.com"
                 icon={MailIcon}
-                className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+                className="mt-4"
               >
                 rachelmorris262@outlook.com
               </SocialLink>
+              
             </ul>
-          </div>
-        </div>
+            <div className="mt-8 border-t border-zinc-100 pt-8" >
+              <p className="mb-4 text-xl font-normal dark:text-zinc-100">Links</p>
+              <Link
+                  href="https://www.schoolofcode.co.uk/"
+                  className="text-sm font-normal text-zinc-800 transition hover:text-yellow-500 dark:text-zinc-200 dark:hover:text-yellow-500"
+                >
+                  School Of Code
+              </Link> <br/>
+              <Link
+                  href="https://codefirstgirls.com/"
+                  className="text-sm font-normal text-zinc-800 transition hover:text-yellow-500 dark:text-zinc-200 dark:hover:text-yellow-500"
+                >
+                  Code First Girls
+              </Link><br/>
+              <Link
+                  href="https://www.datacamp.com/"
+                  className="text-sm font-normal text-zinc-800 transition hover:text-yellow-500 dark:text-zinc-200 dark:hover:text-yellow-500"
+                >
+                  Datacamp
+              </Link>
+            </div>
+          </div>  
+        </div>  
       </Container>
-      <Photos />
+      <div className="mt-20">
+        <Photos/>
+      </div>
     </>
   )
 }
