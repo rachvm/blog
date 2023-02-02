@@ -1,0 +1,61 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+
+
+export const meta = {
+  author: 'Rachel Morris',
+  date: '2023-01-31',
+  title: 'Setting Up The Frontend',
+  description:
+    'Displaying the data from MongoDB within ReactJS',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+
+## Setting The Scene
+
+In the last blog I was able to use express and node to read the data from MongoDB. If I am to create an app where I can use this, 
+then I need to be able to pass this information into a frontend application. To do this I will use ReactJS because 
+
+## Getting Coding...
+
+During the last post, the Cluster was created, so to continue with the free account I created a new database within the cluster. 
+
+Next was to design the setup and inserted a documment on the MongoDB website, into my collection. This can either be done with empty data, or in this case I 
+decided to start inserting information for the first post for my chat app. 
+
+<Image src={document} alt="Document Inserted with value types"/> 
+
+This was a straightforward process as it requires the user to click on where to add text, and a drop down box appears when you hover 
+over the field type. Then I added three more documents, which was a simple process of cloning the document and changing the data. 
+MongoDB supports the user when adding information on their website because when the data is inputted incorrectly it appears red.
+
+Next the backend was set up with express and relevant folders, and as mentioned in the previous post I undertook a database check to
+ensure I was correctly linked to MongoDB. This meant I was now able to set up my models and routes folder, and decided that my first 
+request would to recieve all the documents I had set up earlier. To test the set up of my backend I used postman to ensure I was able 
+receive the data I was expecting. Below is the code from my models file:
+
+```c
+
+import { MongoClient } from "mongodb";
+import dotenv from "dotenv";
+dotenv.config()
+
+const uri = process.env.ATLAS;
+const client = new MongoClient(uri);
+const database = client.db('gettogether');
+const collection = database.collection('chat');
+
+export async function getAllPosts() {
+    const message = collection.find()
+    const results = await message.toArray();
+    return results
+}
+
+```
+
+## Next Steps
+
+Now that I have my backend interacting with MongoDB, I will need to set up the front end using ReactJS, so that 
+all the posts can be displayed in the app.
