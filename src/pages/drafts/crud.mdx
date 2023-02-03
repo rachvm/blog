@@ -1,0 +1,27 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+
+
+export const meta = {
+  author: 'Rachel Morris',
+  date: '2023-01-31',
+  title: 'Setting Up The Frontend',
+  description:
+    'Displaying the data from MongoDB within ReactJS',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+
+## Setting The Scene
+
+In the last blog I was able to use express and node to read the data from MongoDB. If I am to create an app where I can use this, 
+then I need to be able to pass this information into a frontend application. To do this I will use ReactJS because 
+
+## Getting Coding...
+
+During the last post, the Cluster was created, so to continue with the free account I created a new database within the cluster. 
+
+Next was to design the setup and inserted a documment on the MongoDB website, into my collection. This can either be done with empty data, or in this case I 
+decided to start inserting information for the first post for my chat app. 
+
