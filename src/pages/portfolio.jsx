@@ -2,13 +2,14 @@ import Image from 'next/image'
 import Head from 'next/head'
 import { Container } from '@/components/Container'
 import foodmap from '@/images/foodmap.png'
+import calc from '@/images/calc.png'
 import {
     GitHubIcon,
     WebsiteIcon
   } from '@/components/SocialIcons'
 import Link from 'next/link'
 import clsx from 'clsx'
-  import { config } from "../../config"; 
+
 
   function SocialLink({ className, href, children, icon: Icon }) {
     return (
@@ -39,10 +40,12 @@ export default function Portfolio() {
                     List of completed projects. Please hover over the image for more information .
                 </p>
              </div>
+            
+             <div className="flex justify-center flex-row space-x-20">
              
-             <div className="flex justify-center mt-9">
+             <div className="flex mt-9">
                 <div className="relative overflow-hidden w-64 lg:w-56">
-                    <div>
+                    <div >
                     <Image
                         src={foodmap}
                         alt="Foodmap project"/>
@@ -59,6 +62,29 @@ export default function Portfolio() {
                         </div>
                     </div>
                     </div>
+                  
+            </div>
+
+             <div className="flex mt-9">
+                <div className="relative overflow-hidden w-64 lg:w-56">
+                    
+                    <Image
+                        className=''
+                        src={calc}
+                        alt="Mortgage Calc"/>
+                        
+                    <div className="opacity-0 hover:opacity-100 duration-300 bg-zinc-600 bg-opacity-80 absolute inset-0 p-5 z-10 flex flex-col justify-center text-xs text-white font-semibold">
+                        <div><p>Mortgage Calculator <br/> 
+                        Simple App created to allow me to explore using TypeScript, and using React Testing Library
+                        </p>
+                        </div>
+                        <div className="mt-2 lg:pl-20">
+                        <SocialLink className="mt-1" href="https://github.com/rachvm/mortgagecalc" icon={GitHubIcon}>GitHub Repository</SocialLink>
+                        </div>
+                    </div>
+                    </div>
+                  
+            </div>
             </div>
         </Container>
         </>

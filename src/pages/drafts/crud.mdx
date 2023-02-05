@@ -4,10 +4,10 @@ import Image from 'next/image'
 
 export const meta = {
   author: 'Rachel Morris',
-  date: '2023-01-31',
-  title: 'Setting Up The Frontend',
+  date: '2023-02-03',
+  title: 'CRUD Operations',
   description:
-    'Displaying the data from MongoDB within ReactJS',
+    'Displaying the data from MongoDB within ReactJS, then including a create operation',
 }
 
 export default (props) => <ArticleLayout meta={meta} {...props} />
@@ -15,13 +15,9 @@ export default (props) => <ArticleLayout meta={meta} {...props} />
 
 ## Setting The Scene
 
-In the last blog I was able to use express and node to read the data from MongoDB. If I am to create an app where I can use this, 
-then I need to be able to pass this information into a frontend application. To do this I will use ReactJS because 
+Having linked the front end and been ablt to display the posts and replies this has fulfilled the 
 
 ## Getting Coding...
 
-During the last post, the Cluster was created, so to continue with the free account I created a new database within the cluster. 
 
-Next was to design the setup and inserted a documment on the MongoDB website, into my collection. This can either be done with empty data, or in this case I 
-decided to start inserting information for the first post for my chat app. 
 
