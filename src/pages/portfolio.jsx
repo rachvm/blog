@@ -37,7 +37,7 @@ export default function Portfolio() {
                     Portfolio
                 </h1>
                 <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-                    List of completed projects. Please hover over the image for more information .
+                    List of course and personal projects. Please hover over the image for more information .
                 </p>
              </div>
             
