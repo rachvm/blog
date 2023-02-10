@@ -1,0 +1,69 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+import document from './get.png'
+
+export const meta = {
+  author: 'Rachel Morris',
+  date: '2023-02-10',
+  title: 'Researching CORS and setting up the Frontend',
+  description:
+    'Looking into how CORS works by linking a frontend and backend, and then setting up the frontend with the backend set up in previous blogs',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+
+## Setting The Scene
+
+CORS Cross-Origin Resource Sharing is a useful npm package that allows the frontend such as ReactJS to link with the backend ExpressJS, in the post I am going to look into how this works
+and how data is passed from one to the other. I will also link the backend I created during the last blog to the frontend so that I can display the 
+data from MongoDB
+
+## Research on CORS
+
+CORS works by using HTTP-headers to allow the backend to access information sent by the front end. For information to be successfully pass the frontend must send headers to indicates the
+HTTP method and Headers required for the actual request. In the case of linking to a database thes are known as CRUD operations create, read, update and delete, but in terms of the HTTP 
+request POST is the create header, GET is the read header, PATCH is the update header, and DELETE remains the same as the delete header. Information can be passed though a response such 
+as the code below for a POST request to add information
+
+```c
+const addNote = async (text) => {
+		const response = await fetch('http://localhost:5000/api', {
+			method: 'POST',
+			headers: {'Content-Type': 'application/json'},
+			body: JSON.stringify({ content: text }),
+		})
+```
+
+or in can be added to the HTTP such as the code below for a delete request.
+
+```c
+const deleteNote = async (id) => {
+		await fetch(`http://localhost:5000/api/${id}`, {
+			method: 'DELETE',
+		})
+```
+
+
+## Getting Coding...
+
+In my previous blog Initialising Collection in MongoDB I was able to get the posts from Mongo Db using ExpressJS and NodeJS, and used Postman to show this.
+Today I'm going to make get requests in a front end using ReactJS, and using CORS to link this to the backend NodeJS to be able to display the posts held in MongoDB.
+After setting up a create-react-app, the first step is to set up a useEffect hook to send the HTTP request, as below
+
+```c
+  useEffect(() => {
+    async function getPost () {
+      const response = await fetch('http://localhost:3008/api/chat')
+      const data = await response.json()
+      const allposts = data.payload
+      setLike(allposts)
+    } getPost()
+  }, []);
+
+```
+
+I haven't used the headers as talked about in the above section because I am only requesting data rather than sending, but as the project moves onto areas such as create operations using post, 
+these will be needed. From this I was able to map through the data requested, and show the posts and replies as held on MongoDB.
+
+<Image src={document} alt="reactjs app of replies and posts"/> 
