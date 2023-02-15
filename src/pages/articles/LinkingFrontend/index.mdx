@@ -4,7 +4,7 @@ import document from './get.png'
 
 export const meta = {
   author: 'Rachel Morris',
-  date: '2023-02-10',
+  date: '2023-02-15',
   title: 'Researching CORS and setting up the Frontend',
   description:
     'Looking into how CORS works by linking a frontend and backend, and then setting up the frontend with the backend set up in previous blogs',
@@ -15,8 +15,8 @@ export default (props) => <ArticleLayout meta={meta} {...props} />
 
 ## Setting The Scene
 
-CORS Cross-Origin Resource Sharing is a useful npm package that allows the frontend such as ReactJS to link with the backend ExpressJS, in the post I am going to look into how this works
-and how data is passed from one to the other. I will also link the backend I created during the last blog to the frontend so that I can display the 
+CORS Cross-Origin Resource Sharing is a useful npm package that allows the frontend such as ReactJS to link with the backend NodeJS, in the post I am going to look into how this works
+and how data is passed from one to the other. I will also link the backend I created during the last blog 'Initialising Collection in MongoDB' to the frontend so that I can display the 
 data from MongoDB
 
 ## Research on CORS
@@ -67,3 +67,7 @@ I haven't used the headers as talked about in the above section because I am onl
 these will be needed. From this I was able to map through the data requested, and show the posts and replies as held on MongoDB.
 
 <Image src={document} alt="reactjs app of replies and posts"/> 
+
+## Next Steps
+
+Now that the Update part of CRUD operations is complete, my next step will be to add the Create and Delete functions.

@@ -1,0 +1,78 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+import modal from './modal.png'
+
+export const meta = {
+  author: 'Rachel Morris',
+  date: '2023-02-10',
+  title: 'Create and Delete Posts',
+  description:
+    'Creating and Deleting Posts within ReactJS and sending http requests that lead to changing data in MongoDB',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+
+## Setting The Scene
+
+In my blog 'Researching CORS and setting up the Frontend' I had set up the Update part of a CRUD operation, and was able to Update ReactJS with the data held in MongoDB via NodeJS. The next
+step is to look at how Create and Delete the posts.
+
+## Getting coding
+
+Adding Posts
+
+To start with I will look at the Create function or more relevant to the app how to add posts. I firstly made the decision that I would hard code the information that eventually I want to be 
+held through authorisation such Auth0. The reason for this is I am still learning how to use MongoDB and if I have errors while setting this up I wanted to have more control on where the correct 
+data is stored, but had I been using more familiar database such as PostgreSQL I would have firstly inistialised the authorisation. My next decision was how the information about the post would be
+added in react and I decided to use a tailwind CSS modal, as below
+
+<Image src={modal} alt="pop up for adding post"/> 
+
+Next using useState I passed up first through a http request to my routes in the backend and onto my models folder. With PostgreSQL I would normally add a returning* onto the end of my query, however,
+with MongoDB I needed to use results.insertedId, and then send a request to MongoDB to find the new post. 
+
+```c
+export async function addPost(postContent) {
+    const message = collection.insertOne(postContent)
+    const results = await message
+    const findId = results.insertedId
+    const newPost = await collection.findOne({_id: findId});
+    return newPost 
+}
+
+```
+
+I was then able to use this information to pass back to the from end and could change the state on my posts so that thenew post could show otherwise the new post wouldn't show until the page rendered
+
+```c
+const response = await fetch('http://localhost:3001/api/chat', {
+			method: 'POST',
+			headers: {'Content-Type': 'application/json'},
+			body: JSON.stringify(text),
+		})
+		const data = await response.json()
+    const newpost = data.payload
+		setAllposts([...allposts, newpost]);
+	};
+
+````
+
+Deleting Posts
+
+To delete the post I used a Heroicon and chose to set it up so that on click this would send the id of the particular card to be deleted, which referred to each individual post as set up in MongoDB.
+I then sent the information using the parameters from frontend to the backend. Within NodeJS I first needed to convert the params passed from the front end to a string, and then I was able to import 
+ObjectId so that the string can be passed in the query as a hex string to MongoDB, as below.
+
+```c
+export async function deletePost(key){
+    const deleteID = Object.values(key).toString()
+    const message = collection.deleteOne({_id : ObjectId(deleteID)})
+```
+
+Then in the frontend I set the states to remove the post using .filter so that the post is removed. Otherwise the post would still be visiable until the next render.
+
+## Next Steps
+
+The next steps will be to research and set up testing, so as I add more features add in authorisation I can have confidence in my code. This will also allow me to set up testing and explore github protections
+so when I have a continuous deployment on my main branch then I know as code is deployed to that branch it will pass all tests.
