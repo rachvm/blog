@@ -21,7 +21,7 @@ data from MongoDB
 
 ## Research on CORS
 
-CORS works by using HTTP-headers to allow the backend to access information sent by the front end. For information to be successfully pass the frontend must send headers to indicates the
+CORS works by using HTTP-headers to allow the backend to access information sent by the front end and vice versa. For information to be successfully pass the frontend must send headers to indicates the
 HTTP method and Headers required for the actual request. In the case of linking to a database thes are known as CRUD operations create, read, update and delete, but in terms of the HTTP 
 request POST is the create header, GET is the read header, PATCH is the update header, and DELETE remains the same as the delete header. Information can be passed though a response such 
 as the code below for a POST request to add information
@@ -63,7 +63,7 @@ After setting up a create-react-app, the first step is to set up a useEffect hoo
 
 ```
 
-I haven't used the headers as talked about in the above section because I am only requesting data rather than sending, but as the project moves onto areas such as create operations using post, 
+I haven't used the method, headers etc as talked about in the above section because I am only requesting data rather than sending, but as the project moves onto areas such as create operations using post, 
 these will be needed. From this I was able to map through the data requested, and show the posts and replies as held on MongoDB.
 
 <Image src={document} alt="reactjs app of replies and posts"/> 
