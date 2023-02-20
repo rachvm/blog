@@ -1,0 +1,47 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+
+export const meta = {
+  author: 'Rachel Morris',
+  date: '2023-02-20',
+  title: 'What is Machine Learning',
+  description:
+    'Initial research into what is machine learning and how it is used',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+
+## What is Machine Learning
+
+Machine Learning is a subsection of Artificial Intelligence, and is when a program hasn't been programmed in a way that specifically determines the outcome. Machine Learning does this with the use of data
+ that is used to make predictions which can be either structured or unstructured. Where the data is structured this is often in tabular forms where rows are referred to case or values, columns are refered to as vectors, and 
+multiple columns are known as Matrices. When these are plotted onto a graph the columns within the matrices are considered as x-values, and those outside are considered as y values. 
+
+In order to process the data, there are different types of platforms available, as I start my exploration into Machine Learning I will choose Python because I'm already familiar with this programming language. Machine Learning platforms
+also include cloud platforms such as AWS. Next there are the 
+algorithms that interact and determine how the data is procesed and an outcome determined, there are many algorithms which allow a program to do this, but can be seperated into three main areas, these are 
+Supervised Learning, Unsuprvised Learning, and Reinforcement. 
+
+## Supervised Learning
+
+This works by determining patterns based on making a connection between variables, predifined outcomes, and the use of datasets. This group of algorithms are then able to find patterns that exist in the
+data provided to create a prediction based upon the same patterns with any new data. This can be used to in seperating junk mail from email to go into your inbox.
+
+## Unsupervised Learning
+
+This differs from supervised learning in that not all variables and data patterns have been determined, but instead patterns are detemined through the use of algortithms. One example of this type of algorithm is 
+k-means which takes a set of data and determines the groups of data and finds the center point known as a centroid. The advantage of this is that it could find new patterns that may be unknown, 
+which makes it useful in areas such as fraud detection.
+
+## Reinforcement Learning
+
+This type of algorthims are continuously updating and improving the model, unlike supervised and unsupervised learning which will have an end point. The other key difference is that the algorithm isnt set up 
+with sample data, and instead adapts based on a 'trial and error' approach which after a 'sequence of positive outcomes' determines how to continue to solve the given problem. This type is used in areas such 
+as building Artificial Intelligence for computer games.
+
+## Resources
+
+https://bmansoori.ir/book/Machine%20Learning%20For%20Absolute%20Beginners.pdf
+
+https://www.ibm.com/uk-en/cloud/learn/machine-learning#toc-machine-le-K7VszOk6
