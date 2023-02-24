@@ -1,0 +1,79 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+
+export const meta = {
+  author: 'Rachel Morris',
+  date: '2023-02-06',
+  title: 'Exploring MongoDB',
+  description:
+    'When having discussions about NoSQL databases MongoDB is a name often discussed, so this post will be about exploring how it compares with my previous PostgreSQL knowledge, and how to connect to Nodejs ',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+
+## Research
+
+MongoDB is a NoSQL document database. A NoSQL document database stores information in a JSON format instead of rows and columns, which is one of the benefits over SQL databases
+as it makes it easier to expand the scalablity of the database as data grows. However, it is not impossible to increase the scalabillity of SQL databases and there are ways around 
+this, but scaling a SQL database may not be the easiest solution. 
+
+The structure of MongoDB is where PostgreSQL will have a traditional table with rows and columns, MongoDB has collections instead of tables, documents instead of rows, 
+and fields instead of columns.
+
+What really interests me with MongoDB is this idea of adapting how data in stored as you go along, for example, if you had a blog post app you could 
+have a row with details of the post, then if someone replies to that post then you can add fields as are necessary. 
+
+
+## My resources
+
+https://www.mongodb.com/
+
+
+## Getting coding…
+
+To begin with I needed to understand how the query searches work, so I created a free account with MongoDB atlas,and followed this 
+tutorial  https://www.mongodb.com/developer/languages/javascript/node-crud-tutorial/ which helped me to understand how to link node.js with the database and to 
+perform crud operations.
+
+What I found particularly useful is that you can check the link to MongoDB by calling all databases because when I have used PostgreSQL I am reliant on Postman
+to determine if I have linked to the database. 
+
+```c
+import { MongoClient } from "mongodb";
+import dotenv from "dotenv";
+dotenv.config()
+
+async function main() {
+
+    const uri = process.env.ATLAS;
+
+    const client = new MongoClient(uri);
+
+    try { 
+        await client.connect();
+        await listDatabases(client)
+    } catch (e) {
+        console.error(e);
+    } finally {
+        await client.close();
+    }
+}
+
+main().catch(console.error);
+
+async function listDatabases(client) {
+    const databasesList = await client.db().admin().listDatabases();
+    console.log("Databases: ");
+    databasesList.databases.forEach(db => {
+        console.log(`- ${db.name}`);
+    })
+}
+```
+
+## Next Steps
+
+Now it’s time to get my hands on my own code. While there are plenty of tutorials out there, I find the best way to really learn is to roll 
+up my sleeves and play with the code. What I will do next is to set up my own data, and perform CRUD operations to create a backend using 
+node.js and then display the data in the front end using reactjs.
+
