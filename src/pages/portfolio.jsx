@@ -41,9 +41,9 @@ export default function Portfolio() {
                 </p>
              </div>
             
-             <div className="flex justify-center flex-row space-x-20">
+             <div className="flex justify-center flex-wrap gap-5 mt-5">
              
-             <div className="flex mt-9">
+             <div>
                 <div className="relative overflow-hidden w-64 lg:w-56">
                     <div >
                     <Image
@@ -65,7 +65,7 @@ export default function Portfolio() {
                   
             </div>
 
-             <div className="flex mt-9">
+             <div>
                 <div className="relative overflow-hidden w-64 lg:w-56">
                     
                     <Image
